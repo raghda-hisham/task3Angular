@@ -1,0 +1,22 @@
+
+<div class="container-fluid" ng-app="newapp" ng-controller="newcontroller" data-ng-init="init()">
+  <div class="filters">
+    <select Class="sort-selecet" [(ngModel)]="sort">
+      <option class="selected" selected>sort</option>
+       <option value="top_rate">top_rated</option>
+       <option value="up_coming_movies">up coming movies</option>
+       <option value="now_playing">now playing movies</option>
+    </select>
+  </div>
+  <div class="row">
+      <div  *ngFor='let object of data' class="col-md-3">
+      <router-link class="card" [routerLink]="['/details',object.id]" style="width: 18rem;">
+          <img src="https://image.tmdb.org/t/p/w500{{object.poster_path}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-text">{{object.original_title}}</h5>
+            <p>{{object.id}}</p>
+          </div>
+      </router-link>
+      </div>
+  </div>
+</div>
