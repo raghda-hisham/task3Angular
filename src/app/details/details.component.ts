@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsComponent implements OnInit {
   id:any={};
   data:any={};
+  img_url:any="";
   constructor(public _router:ActivatedRoute , private _service:MovieServiceService) {
   }
 
@@ -18,7 +19,9 @@ export class DetailsComponent implements OnInit {
   }
   getOneId(){
     this._service.getOne(this.id).subscribe((res)=>{
-      console.log(this.id)
+       this.data=res;
+       console.log(this.data);
+       this.img_url="https://image.tmdb.org/t/p/w500/"+this.data.poster_path;
     })
   }
 }

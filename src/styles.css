@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 :root{
   padding: 0;
   margin: 0;
@@ -8,6 +10,7 @@
 body{
   font-family: Roboto , "Helvetic Neue" , sans-serif !important;
   background-color: #151515 !important;
-  padding-top: 60px;
   height: 100%;
+  padding:20px;
+  padding-top: 60px;
 }

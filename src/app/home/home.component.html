@@ -1,11 +1,10 @@
 
 <div class="container-fluid" ng-app="newapp" ng-controller="newcontroller" data-ng-init="init()">
   <div class="filters">
-    <select Class="sort-selecet" [(ngModel)]="sort">
-      <option class="selected" selected>sort</option>
-       <option value="top_rate">top_rated</option>
-       <option value="up_coming_movies">up coming movies</option>
-       <option value="now_playing">now playing movies</option>
+    <label class="text-light">{{movies}}</label>
+    <select  class="form-contol" [(ngModel)]="moviesCategory" (ngModelChange)="changeFn($event)">
+      <option *ngFor='let mov of movies' [value]="mov.name" >{{mov.name}}</option>
+      <h1>{{modifedtext}}</h1>
     </select>
   </div>
   <div class="row">
@@ -15,6 +14,8 @@
           <div class="card-body">
             <h5 class="card-text">{{object.original_title}}</h5>
             <p>{{object.id}}</p>
+            <div class="icon-bar">
+            </div>
           </div>
       </router-link>
       </div>

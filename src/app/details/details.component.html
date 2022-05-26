@@ -1,7 +1,9 @@
-<div class="card">
-<img src="https://image.tmdb.org/t/p/w500" class="card-img-top" alt="...">
-<div class="card-body">
-  <h5 class="card-text"></h5>
-  <p>}</p>
+<div class="card d-flex flex-row justify-content-between">
+<img  class="card-img-top w-25 bg-warning" [src]="img_url" alt="...">
+<div class="card-body bg-dark text-light w-50 p-5">
+  <h5 class="card-text mb-4">{{data.original_title}}</h5>
+  <div class="mb-4">vote_average: {{data.vote_average}}</div>
+  <div class="describtion fs-5">describtion:</div>
+  <p>{{data.overview}}</p>
 </div>
 </div>

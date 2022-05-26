@@ -6,15 +6,15 @@ import { ActivatedRoute } from '@angular/router';
   providedIn: 'root'
 })
 export class MovieServiceService {
-    sort:string='top_rated';
-    id2:any={};
+    id2:number=0;
   constructor(public _Http:HttpClient , public _activated:ActivatedRoute) { }
-  find():Observable<any>
+  find(movies:string):Observable<any>
   {
-    return this._Http.get(`https://api.themoviedb.org/3/movie/top_rated?api_key=b38d1324d79127ba86f8309e541bffd4`)
+    // alert(movies);
+    return this._Http.get(`https://api.themoviedb.org/3/movie/`+movies+`?api_key=b38d1324d79127ba86f8309e541bffd4`)
   }
-  getOne(id:any){
-    return this._Http.get(`https://api.themoviedb.org/3/movie/${{id}}?api_key=b38d1324d79127ba86f8309e541bffd4`)
+  getOne(id:number):Observable<any>{
+    return this._Http.get(`https://api.themoviedb.org/3/movie/`+id+`?api_key=b38d1324d79127ba86f8309e541bffd4`);
   }
 
 }
